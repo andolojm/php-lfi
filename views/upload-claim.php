@@ -2,7 +2,7 @@
     $uploaddir = './collision-img/';
     $uploadfile = $uploaddir . basename($_FILES['photo']['name']);
     echo pathinfo($uploadfile, PATHINFO_EXTENSION);
-    if (pathinfo($uploadfile, PATHINFO_EXTENSION) == 'php'){
+    if (pathinfo($uploadfile, PATHINFO_EXTENSION) != 'php'){
         if (move_uploaded_file($_FILES['photo']['tmp_name'], $uploadfile)) { ?>
             <p>Successssss</p>
         <?php } else { ?>

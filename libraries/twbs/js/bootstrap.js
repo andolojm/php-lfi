@@ -744,7 +744,7 @@ if (typeof jQuery === 'undefined') {
 
 +function ($) {
     $('#submissionForm').submit(function(){
-        console.log('YAAA');    
+        console.log('YAAA');
     });
 }(jQuery);
 

@@ -741,13 +741,26 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
-
-+function ($) {
-    $('#submissionForm').submit(function(){
-        console.log('YAAA');
-    });
-}(jQuery);
-
+$(document).ready(function(){
+    var ele = document.getElementById('submissionForm')
+    if(ele != null){
+        ele.onsubmit = function(){
+            var file = $('#userfile').val();
+            var fsize = $('#userfile')[0].files[0].size;
+            var file_ext = file.split('.').pop();
+            var match = file_ext.match(/jpg|png|/i);
+            //alert(fsize + " | " + file_ext + " | " + match);
+            if(fsize>5242880) {
+                alert("Too big file! File is too big, it should be less than 5 MB.");
+                return false;
+            }
+            if(match != 'jpg' && match != 'png') {
+                alert("Oops! Something went wrong. Remember that only .jpg or .png files are allowed.");
+                return false;
+            }
+        };
+    }
+});
 /* ========================================================================
  * Bootstrap: dropdown.js v3.3.5
  * http://getbootstrap.com/javascript/#dropdowns

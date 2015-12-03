@@ -29,6 +29,9 @@
                 echo $message;
             }
         }
+        if($login->isUserLoggedIn() == true) {
+            ?><h4>Welcome, Ralph Tucson! Account number: 7412524121</h4><?php
+        }
     }
     ?>
     <div class="jumbotron">

@@ -9,3 +9,5 @@ CREATE TABLE IF NOT EXISTS `login`.`users` (
   UNIQUE KEY `user_email` (`user_email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data';
 
+INSERT INTO `login`.`users` (`user_name`, `user_password_hash`, `user_email`)
+  VALUES ('RALPHIE94','This is a bullshit hash that will not let you log in','rtucson94@mail.com');
